@@ -57,7 +57,7 @@ select opt in "${opciones[@]}"; do
         echo "Archivo borrado"
       else
         echo "ERROR. archivo '$narch' no existe"
-      if
+      fi
       ls
       ;;
     "CAMBIAR EL NOMBRE DE UN ARCHIVO")
