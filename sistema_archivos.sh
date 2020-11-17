@@ -27,10 +27,14 @@ select opt in "${opciones[@]}"; do
       echo "$n1 * $n2 = $(($n1*$n2))"
       ;;
     "VISUALIZAR EL CONTENIDO DE UN ARCHIVO")
-      df -h
+      ls
+      read -p "Ingrese nombre de archivo:" narch
+      cat $narch
       ;;
     "BORRAR UN ARCHIVO")
-      df -h
+      ls
+      read -p "Ingrese nombre de archivo:" narch
+      rm $narch
       ;;
     "CAMBIAR EL NOMBRE DE UN ARCHIVO")
       df -h

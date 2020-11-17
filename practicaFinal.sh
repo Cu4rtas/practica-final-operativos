@@ -21,7 +21,7 @@ select opt in "${opciones[@]}"; do
         break
         ;;
     *) 
-      echo "Invalid option $REPLY"
+      echo "Opción Invalida $REPLY"
       ;;
   esac
 done
