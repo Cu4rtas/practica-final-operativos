@@ -16,9 +16,14 @@ select opt in "${opciones[@]}"; do
   case $opt in
     "CREAR DIRECTORIO")
       read -p "Ingrese el nombre del directorio: " ndir
-      mkdir $ndir
-      echo "Directorio creado"
-      ls
+      if test -d $ndir
+      then
+        echo "Directorio ya existe"
+      else
+        mkdir $ndir
+        echo "Directorio creado"
+        ls
+      fi
       ;;
     "COPIAR ARCHIVOS")
       ls
