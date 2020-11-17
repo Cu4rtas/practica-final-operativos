@@ -22,7 +22,9 @@ select opt in "${opciones[@]}"; do
       who | grep $nuser
       ;;
     "ENVIAR MENSAJE A UN USUARIO")
-      df -h
+      who
+      read -p "Ingrese nombre de Usuario:" nuser
+      write $nuser
       ;;
     "REGRESAR")
         bash "practicaFinal.sh"

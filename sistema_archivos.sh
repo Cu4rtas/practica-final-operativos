@@ -21,7 +21,11 @@ select opt in "${opciones[@]}"; do
       ls
       ;;
     "COPIAR ARCHIVOS")
-      who -q
+      ls
+      read -p "Ingrese nombre de archivo:" nfile
+      read -p "Ingrese ruta de destino:" nruta
+      cp $nfile $nruta
+      echo "Archivo copiado"
       ;;
     "MODIFICAR PERMISOS A UN ARCHIVO")
       read -p "Enter the first number: " n1
