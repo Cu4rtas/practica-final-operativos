@@ -78,7 +78,7 @@ select opt in "${opciones[@]}"; do
       read -p "Ingrese el nombre del directorio: " ndir
       if test -d $ndir
       then
-        rmdir $ndir
+        rm -r $ndir
         echo "Directorio eliminado"
       else
         echo "ERROR. Directorio '$ndir' no existe"
