@@ -19,12 +19,11 @@ select opt in "${opciones[@]}"; do
       if test -d $ndir
       then
         echo "ERROR. Directorio '$ndir' ya existe"
-        ls
       else
         mkdir $ndir
         echo "Directorio creado"
-        ls
       fi
+      ls
       ;;
     "COPIAR ARCHIVOS")
       ls
@@ -52,23 +51,38 @@ select opt in "${opciones[@]}"; do
     "BORRAR UN ARCHIVO")
       ls
       read -p "Ingrese nombre de archivo:" narch
-      rm $narch
-      echo "Archivo borrado"
+      if test -f $narch
+      then
+        rm $narch
+        echo "Archivo borrado"
+      else
+        echo "ERROR. archivo '$narch' no existe"
+      if
       ls
       ;;
     "CAMBIAR EL NOMBRE DE UN ARCHIVO")
       ls
       read -p "Ingrese nombre de archivo:" narch
-      read -p "Ingrese NUEVO nombre de archivo:" newnarch
-      mv $narch $newnarch
-      echo "Nombre de archivo cambiado"
+      if test -f $narch
+      then
+        read -p "Ingrese NUEVO nombre de archivo:" newnarch
+        mv $narch $newnarch
+        echo "Nombre de archivo cambiado"
+      else
+        echo "ERROR. Archivo '$narch' no existe"
+      fi
       ls
       ;;
     "BORRAR UN DIRECTORIO")
       ls
       read -p "Ingrese el nombre del directorio: " ndir
-      rmdir $ndir
-      echo "Directorio eliminado"
+      if test -d $ndir
+      then
+        rmdir $ndir
+        echo "Directorio eliminado"
+      else
+        echo "ERROR. Directorio '$ndir' no existe"
+      fi
       ls
       ;;
     "REGRESAR")
