@@ -18,7 +18,8 @@ select opt in "${opciones[@]}"; do
       read -p "Ingrese el nombre del directorio: " ndir
       if test -d $ndir
       then
-        echo "Directorio ya existe"
+        echo "ERROR. Directorio '$ndir' ya existe"
+        ls
       else
         mkdir $ndir
         echo "Directorio creado"
@@ -40,7 +41,13 @@ select opt in "${opciones[@]}"; do
     "VISUALIZAR EL CONTENIDO DE UN ARCHIVO")
       ls
       read -p "Ingrese nombre de archivo:" narch
-      cat $narch
+      if test -f $narch
+      then
+        cat $narch
+      else
+        echo "ERROR. Archivo $narch no existe."
+        ls
+      fi
       ;;
     "BORRAR UN ARCHIVO")
       ls
