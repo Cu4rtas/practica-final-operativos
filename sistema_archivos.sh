@@ -17,6 +17,8 @@ select opt in "${opciones[@]}"; do
     "CREAR DIRECTORIO")
       read -p "Ingrese el nombre del directorio: " ndir
       mkdir $ndir
+      echo "Directorio creado"
+      ls
       ;;
     "COPIAR ARCHIVOS")
       who -q
@@ -35,12 +37,23 @@ select opt in "${opciones[@]}"; do
       ls
       read -p "Ingrese nombre de archivo:" narch
       rm $narch
+      echo "Archivo borrado"
+      ls
       ;;
     "CAMBIAR EL NOMBRE DE UN ARCHIVO")
-      df -h
+      ls
+      read -p "Ingrese nombre de archivo:" narch
+      read -p "Ingrese NUEVO nombre de archivo:" newnarch
+      mv $narch $newnarch
+      echo "Nombre de archivo cambiado"
+      ls
       ;;
     "BORRAR UN DIRECTORIO")
-      df -h
+      ls
+      read -p "Ingrese el nombre del directorio: " ndir
+      rmdir $ndir
+      echo "Directorio eliminado"
+      ls
       ;;
     "REGRESAR")
         bash "practicaFinal.sh"

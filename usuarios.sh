@@ -18,9 +18,8 @@ select opt in "${opciones[@]}"; do
       who -q
       ;;
     "AVERIGUAR SI UN USUARIO ESTA CONECTADO")
-      read -p "Enter the first number: " n1
-      read -p "Enter the second number: " n2
-      echo "$n1 * $n2 = $(($n1*$n2))"
+      read -p "Ingrese nombre de usuario:" nuser
+      who | grep $nuser
       ;;
     "ENVIAR MENSAJE A UN USUARIO")
       df -h
